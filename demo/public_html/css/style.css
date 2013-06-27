@@ -1,0 +1,237 @@
+
+html, body, div, span, applet, object, iframe, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font: 12px/18px Arial, Helvetica, sans-serif;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+body {
+    /*background: url(../images/body.jpg) no-repeat top center;*/
+    color: #6b6b6b;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ li {
+    list-style: none;
+ }
+
+img {
+    border:none;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+ }
+
+h2 {
+    color: #015295;
+    font-size: 12px;
+}
+
+h3 {
+    color: #ee7b0b;
+    font-size: 12px;
+    font-weight: bold;
+}
+h4, h1 {
+    margin: 0;
+    padding: 0;
+    font-weight:normal;
+}
+
+select {
+    border: 1px solid #dfdfdf;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 3px;
+}
+
+.form {
+    background: url(../images/form.jpg) repeat-x top center;
+    width: 878px;
+    height: 405px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 3px #a5a5a5;
+    position: relative;
+    top:155px;
+    margin: 0 auto;
+    border: 1px solid white;
+}
+
+.form_inside {
+    padding: 80px;
+}
+
+.progr {
+    float:left;
+}
+
+.progress, .progress-wrapper {
+    background: url(../images/progress.png) no-repeat left;
+    background-size: 0% 100%;
+    height: 15px;
+    width: 520px;
+    margin: 0 auto;
+    margin-top: -130px;
+    border-radius: 10px;
+}
+
+.progress-wrapper {
+    background: none;
+    background-color: #b0b0b0;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b0b0b0), to(#ffffff));
+    background-image: -webkit-linear-gradient(top, #b0b0b0, #ffffff);
+    background-image:    -moz-linear-gradient(top, #b0b0b0, #ffffff);
+    background-image:     -ms-linear-gradient(top, #b0b0b0, #ffffff);
+    background-image:      -o-linear-gradient(top, #b0b0b0, #ffffff);
+}
+
+.progress-wrapper p {
+    text-align: center;
+}
+
+/*******/
+
+.form_inside dl {
+    height: 117px;
+    overflow: hidden;
+}
+
+.form_inside dl dt {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 40px;
+    color: black;
+    font-size: 30px;
+    font-family: 'Open Sans';
+    text-shadow: 0 1px 1px white;
+}
+
+.form_inside dl dd {
+    margin-bottom: 20px;
+}
+
+.form_inside dl dd select, .form_inside dl dd input {
+    display: block;
+    height: 34px;
+    width: 250px;
+    padding: 0;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: inset 1px 1px 1px #6c6c6c, 1px 1px 1px white;
+    margin: 0 auto;
+}
+
+.form_inside dl dd input {
+    height: 30px;
+}
+
+.nextBtn {
+    background: url(../images/button.jpg) repeat-x center;
+    top: 2px;
+    left: 6px;
+    width: 197px;
+    padding: 10px 0 10px 0px;
+    margin: 0 36%;
+    margin-top: 105px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Open Sans;
+    text-shadow: 0 1px 1px white;
+}
+
+.nextBtn:hover {
+    background: url(../images/button_h.jpg) repeat-x center;
+    cursor: pointer;
+}
+
+.nextBtn img {
+    margin: -5px 0 0 5px;
+    vertical-align: middle;
+}
+
+.prevQuest {
+    visibility: hidden;
+    width: 26px;
+    height: 39px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    border: none;
+    background: url(../images/left.png) no-repeat;
+    margin: -112px 30px 0 0;
+    cursor: pointer;
+}
+
+.complForm {
+    display: none;
+}
+
+.complForm select, .complForm label, .complForm span {
+    float: left;
+}
+
+.complForm input, .complForm select {
+    clear: left;
+    height: 34px;
+    display: block;
+    height: 34px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+.complForm div input, .complForm div select {
+    background: #fff !important;
+}
+
+.complForm input {
+    height: 30px;
+}
+
+.complForm select {
+    margin-top: 1px;
+}
+
+.resBlock {
+    float: left;
+    height: 67px;
+    width: 254px;
+    margin: 10px;
+}
+
+.complForm h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.complForm > input {
+    margin: 0 auto;
+}
+
+.finishBtn {
+    background: url(../images/button.jpg) repeat-x center;
+}

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slide form</title>
+        <link type="text/css" rel="stylesheet" href="./css/style.css" />
+        <link type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" ></script>
+        <script type="text/javascript" src="./js/slide.js"></script>
+    </head>
+
+<body>
+    <div class="wrapper">
+	<div class="form">
+            <div class="form_inside">
+
+                <dl class="questions">
+                    <dt>What type of loan do you need?</dt>
+                        <dd>
+                            <select>
+                                <option value="" selected="">...</option>
+                                <option>Refinance</option>
+                                <option>Home Equity</option>
+                                <option>Purchase Home</option>
+                            </select>
+                        </dd>
+                    <dt>Property Type</dt>
+                        <dd>
+                            <select>
+                                <option value="" selected="">...</option>
+                                <option>Single Family</option>
+                                <option>Multiple Family</option>
+                                <option>Town House</option>
+                                <option>Condominium</option>
+                            </select>
+                        </dd>
+                    <dt>Property Zip</dt>
+                        <dd>
+                            <input type="text" placeholder="property zip"/>
+                        </dd>
+                    <dt>Property State</dt>
+                        <dd>
+                            <select>
+                            <option>...</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        </dd>
+                    <dt>Property Use</dt>
+                        <dd>
+                            <select>
+                                <option value="" selected="">...</option>
+                                <option>Primary Residence</option>
+                                <option>Second Home</option>
+                                <option>Investment Property</option>
+                            </select>
+                        </dd>
+                    <dt>Estimated Property Value</dt>
+                        <dd>
+                            <select>
+                                <option value="" selected="">...</option>
+                                <option value="2500" id="AdditionalCash-1">$0 - $5,000</option>
+                                <option value="7500" id="AdditionalCash-2">$5,000 - $10,000</option>
+                                <option value="12500" id="AdditionalCash-3">$10,000 - $15,000</option>
+                                <option value="17500" id="AdditionalCash-4">$15,000 - $20,000</option>
+                                <option value="22500" id="AdditionalCash-5">$20,000 - $25,000</option>
+                                <option value="27500" id="AdditionalCash-6">$25,000 - $30,000</option>
+                                <option value="32500" id="AdditionalCash-7">$30,000 - $35,000</option>
+                                <option value="37500" id="AdditionalCash-8">$35,000 - $40,000</option>
+                                <option value="42500" id="AdditionalCash-9">$40,000 - $45,000</option>
+                                <option value="47500" id="AdditionalCash-10">$45,000 - $50,000</option>
+                                <option value="52500" id="AdditionalCash-11">$50,000 - $55,000</option>
+                                <option value="57500" id="AdditionalCash-12">$55,000 - $60,000</option>
+                                <option value="62500" id="AdditionalCash-13">$60,000 - $65,000</option>
+                                <option value="67500" id="AdditionalCash-14">$65,000 - $70,000</option>
+                                <option value="72500" id="AdditionalCash-15">$70,000 - $75,000</option>
+                                <option value="77500" id="AdditionalCash-16">$75,000 - $80,000</option>
+                                <option value="82500" id="AdditionalCash-17">$80,000 - $85,000</option>
+                                <option value="87500" id="AdditionalCash-18">$85,000 - $90,000</option>
+                                <option value="92500" id="AdditionalCash-19">$90,000 - $95,000</option>
+                                <option value="97500" id="AdditionalCash-20">$95,000 - $100,000</option>
+                                <option value="100000" id="AdditionalCash-21">$100,000 - $100,000</option>
+                                <option value="105000" id="AdditionalCash-22">$100,000 - $110,000</option>
+                                <option value="115000" id="AdditionalCash-23">$110,000 - $120,000</option>
+                                <option value="125000" id="AdditionalCash-24">$120,000 - $130,000</option>
+                                <option value="135000" id="AdditionalCash-25">$130,000 - $140,000</option>
+                                <option value="145000" id="AdditionalCash-26">$140,000 - $150,000</option>
+                                <option value="155000" id="AdditionalCash-27">$150,000 - $160,000</option>
+                                <option value="165000" id="AdditionalCash-28">$160,000 - $170,000</option>
+                                <option value="175000" id="AdditionalCash-29">$170,000 - $180,000</option>
+                                <option value="185000" id="AdditionalCash-30">$180,000 - $190,000</option>
+                                <option value="195000" id="AdditionalCash-31">$190,000 - $200,000</option>
+                                <option value="210000" id="AdditionalCash-32">$200,000 - $220,000</option>
+                                <option value="230000" id="AdditionalCash-33">$220,000 - $240,000</option>
+                                <option value="250000" id="AdditionalCash-34">$240,000 - $260,000</option>
+                                <option value="270000" id="AdditionalCash-35">$260,000 - $280,000</option>
+                                <option value="290000" id="AdditionalCash-36">$280,000 - $300,000</option>
+                                <option value="310000" id="AdditionalCash-37">$300,000 - $320,000</option>
+                                <option value="330000" id="AdditionalCash-38">$320,000 - $340,000</option>
+                                <option value="350000" id="AdditionalCash-39">$340,000 - $360,000</option>
+                                <option value="370000" id="AdditionalCash-40">$360,000 - $380,000</option>
+                                <option value="390000" id="AdditionalCash-41">$380,000 - $400,000</option>
+                                <option value="410000" id="AdditionalCash-42">$400,000 - $420,000</option>
+                                <option value="430000" id="AdditionalCash-43">$420,000 - $440,000</option>
+                                <option value="450000" id="AdditionalCash-44">$440,000 - $460,000</option>
+                                <option value="470000" id="AdditionalCash-45">$460,000 - $480,000</option>
+                                <option value="490000" id="AdditionalCash-46">$480,000 - $500,000</option>
+                                <option value="510000" id="AdditionalCash-47">$500,000 - $520,000</option>
+                                <option value="530000" id="AdditionalCash-48">$520,000 - $540,000</option>
+                                <option value="550000" id="AdditionalCash-49">$540,000 - $560,000</option>
+                                <option value="570000" id="AdditionalCash-50">$560,000 - $580,000</option>
+                                <option value="590000" id="AdditionalCash-51">$580,000 - $600,000</option>
+                                <option value="610000" id="AdditionalCash-52">$600,000 - $620,000</option>
+                                <option value="630000" id="AdditionalCash-53">$620,000 - $640,000</option>
+                                <option value="650000" id="AdditionalCash-54">$640,000 - $660,000</option>
+                                <option value="670000" id="AdditionalCash-55">$660,000 - $680,000</option>
+                                <option value="690000" id="AdditionalCash-56">$680,000 - $700,000</option>
+                                <option value="710000" id="AdditionalCash-57">$700,000 - $720,000</option>
+                                <option value="730000" id="AdditionalCash-58">$720,000 - $740,000</option>
+                                <option value="750000" id="AdditionalCash-59">$740,000 - $760,000</option>
+                                <option value="770000" id="AdditionalCash-60">$760,000 - $780,000</option>
+                                <option value="790000" id="AdditionalCash-61">$780,000 - $800,000</option>
+                                <option value="810000" id="AdditionalCash-62">$800,000 - $820,000</option>
+                                <option value="830000" id="AdditionalCash-63">$820,000 - $840,000</option>
+                                <option value="850000" id="AdditionalCash-64">$840,000 - $860,000</option>
+                                <option value="870000" id="AdditionalCash-65">$860,000 - $880,000</option>
+                                <option value="890000" id="AdditionalCash-66">$880,000 - $900,000</option>
+                                <option value="910000" id="AdditionalCash-67">$900,000 - $920,000</option>
+                                <option value="930000" id="AdditionalCash-68">$920,000 - $940,000</option>
+                                <option value="950000" id="AdditionalCash-69">$940,000 - $960,000</option>
+                                <option value="970000" id="AdditionalCash-70">$960,000 - $980,000</option>
+                                <option value="990000" id="AdditionalCash-71">$980,000 +</option>
+                                <option value="1000000" id="AdditionalCash-72">$1,000,000 +</option>
+                                <option value="1750000" id="AdditionalCash-74">$1,500,000 +</option>
+                                <option value="2000000" id="AdditionalCash-75">$2,000,000 +</option>
+                            </select>
+                        </dd>
+
+                    <dt>Total Mortgage Balance</dt>
+                        <dd>
+                            <select>
+                                <option value="" selected="">...</option>
+                                <option value="2500" id="AdditionalCash-1">$0 - $5,000</option>
+                                <option value="7500" id="AdditionalCash-2">$5,000 - $10,000</option>
+                                <option value="12500" id="AdditionalCash-3">$10,000 - $15,000</option>
+                                <option value="17500" id="AdditionalCash-4">$15,000 - $20,000</option>
+                                <option value="22500" id="AdditionalCash-5">$20,000 - $25,000</option>
+                                <option value="27500" id="AdditionalCash-6">$25,000 - $30,000</option>
+                                <option value="32500" id="AdditionalCash-7">$30,000 - $35,000</option>
+                                <option value="37500" id="AdditionalCash-8">$35,000 - $40,000</option>
+                                <option value="42500" id="AdditionalCash-9">$40,000 - $45,000</option>
+                                <option value="47500" id="AdditionalCash-10">$45,000 - $50,000</option>
+                                <option value="52500" id="AdditionalCash-11">$50,000 - $55,000</option>
+                                <option value="57500" id="AdditionalCash-12">$55,000 - $60,000</option>
+                                <option value="62500" id="AdditionalCash-13">$60,000 - $65,000</option>
+                                <option value="67500" id="AdditionalCash-14">$65,000 - $70,000</option>
+                                <option value="72500" id="AdditionalCash-15">$70,000 - $75,000</option>
+                                <option value="77500" id="AdditionalCash-16">$75,000 - $80,000</option>
+                                <option value="82500" id="AdditionalCash-17">$80,000 - $85,000</option>
+                                <option value="87500" id="AdditionalCash-18">$85,000 - $90,000</option>
+                                <option value="92500" id="AdditionalCash-19">$90,000 - $95,000</option>
+                                <option value="97500" id="AdditionalCash-20">$95,000 - $100,000</option>
+                                <option value="100000" id="AdditionalCash-21">$100,000 - $100,000</option>
+                                <option value="105000" id="AdditionalCash-22">$100,000 - $110,000</option>
+                                <option value="115000" id="AdditionalCash-23">$110,000 - $120,000</option>
+                                <option value="125000" id="AdditionalCash-24">$120,000 - $130,000</option>
+                                <option value="135000" id="AdditionalCash-25">$130,000 - $140,000</option>
+                                <option value="145000" id="AdditionalCash-26">$140,000 - $150,000</option>
+                                <option value="155000" id="AdditionalCash-27">$150,000 - $160,000</option>
+                                <option value="165000" id="AdditionalCash-28">$160,000 - $170,000</option>
+                                <option value="175000" id="AdditionalCash-29">$170,000 - $180,000</option>
+                                <option value="185000" id="AdditionalCash-30">$180,000 - $190,000</option>
+                                <option value="195000" id="AdditionalCash-31">$190,000 - $200,000</option>
+                                <option value="210000" id="AdditionalCash-32">$200,000 - $220,000</option>
+                                <option value="230000" id="AdditionalCash-33">$220,000 - $240,000</option>
+                                <option value="250000" id="AdditionalCash-34">$240,000 - $260,000</option>
+                                <option value="270000" id="AdditionalCash-35">$260,000 - $280,000</option>
+                                <option value="290000" id="AdditionalCash-36">$280,000 - $300,000</option>
+                                <option value="310000" id="AdditionalCash-37">$300,000 - $320,000</option>
+                                <option value="330000" id="AdditionalCash-38">$320,000 - $340,000</option>
+                                <option value="350000" id="AdditionalCash-39">$340,000 - $360,000</option>
+                                <option value="370000" id="AdditionalCash-40">$360,000 - $380,000</option>
+                                <option value="390000" id="AdditionalCash-41">$380,000 - $400,000</option>
+                                <option value="410000" id="AdditionalCash-42">$400,000 - $420,000</option>
+                                <option value="430000" id="AdditionalCash-43">$420,000 - $440,000</option>
+                                <option value="450000" id="AdditionalCash-44">$440,000 - $460,000</option>
+                                <option value="470000" id="AdditionalCash-45">$460,000 - $480,000</option>
+                                <option value="490000" id="AdditionalCash-46">$480,000 - $500,000</option>
+                                <option value="510000" id="AdditionalCash-47">$500,000 - $520,000</option>
+                                <option value="530000" id="AdditionalCash-48">$520,000 - $540,000</option>
+                                <option value="550000" id="AdditionalCash-49">$540,000 - $560,000</option>
+                                <option value="570000" id="AdditionalCash-50">$560,000 - $580,000</option>
+                                <option value="590000" id="AdditionalCash-51">$580,000 - $600,000</option>
+                                <option value="610000" id="AdditionalCash-52">$600,000 - $620,000</option>
+                                <option value="630000" id="AdditionalCash-53">$620,000 - $640,000</option>
+                                <option value="650000" id="AdditionalCash-54">$640,000 - $660,000</option>
+                                <option value="670000" id="AdditionalCash-55">$660,000 - $680,000</option>
+                                <option value="690000" id="AdditionalCash-56">$680,000 - $700,000</option>
+                                <option value="710000" id="AdditionalCash-57">$700,000 - $720,000</option>
+                                <option value="730000" id="AdditionalCash-58">$720,000 - $740,000</option>
+                                <option value="750000" id="AdditionalCash-59">$740,000 - $760,000</option>
+                                <option value="770000" id="AdditionalCash-60">$760,000 - $780,000</option>
+                                <option value="790000" id="AdditionalCash-61">$780,000 - $800,000</option>
+                                <option value="810000" id="AdditionalCash-62">$800,000 - $820,000</option>
+                                <option value="830000" id="AdditionalCash-63">$820,000 - $840,000</option>
+                                <option value="850000" id="AdditionalCash-64">$840,000 - $860,000</option>
+                                <option value="870000" id="AdditionalCash-65">$860,000 - $880,000</option>
+                                <option value="890000" id="AdditionalCash-66">$880,000 - $900,000</option>
+                                <option value="910000" id="AdditionalCash-67">$900,000 - $920,000</option>
+                                <option value="930000" id="AdditionalCash-68">$920,000 - $940,000</option>
+                                <option value="950000" id="AdditionalCash-69">$940,000 - $960,000</option>
+                                <option value="970000" id="AdditionalCash-70">$960,000 - $980,000</option>
+                                <option value="990000" id="AdditionalCash-71">$980,000 +</option>
+                                <option value="1000000" id="AdditionalCash-72">$1,000,000 +</option>
+                                <option value="1750000" id="AdditionalCash-74">$1,500,000 +</option>
+                                <option value="2000000" id="AdditionalCash-75">$2,000,000 +</option>
+                            </select>
+                        </dd>
+                    <dt>First Name</dt>
+                        <dd>
+                            <input type="text" placeholder="first name"/>
+                        </dd>
+                    <dt>Last Name</dt>
+                        <dd>
+                            <input type="text" placeholder="last name"/>
+                        </dd>
+                    <dt>Email</dt>
+                        <dd>
+                            <input type="text" placeholder="email"/>
+                        </dd>
+                    <dt>Zip</dt>
+                        <dd>
+                            <input type="text" placeholder="zip"/>
+                        </dd>
+                    <dt>State</dt>
+                        <dd>
+                            <select>
+                                <option>...</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </dd>
+                    <dt>City</dt>
+                        <dd>
+                            <input type="text" placeholder="city"/>
+                        </dd>
+                    <dt>Address</dt>
+                        <dd>
+                            <input type="text" placeholder="address"/>
+                        </dd>
+                    <dt>Home Phone</dt>
+                        <dd>
+                            <input type="text" placeholder="home phone"/>
+                        </dd>
+                    <dt>Cell Phone</dt>
+                        <dd>
+                            <input type="text" placeholder="cell phone"/>
+                        </dd>
+                    <dt>Credit Rating</dt>
+                        <dd>
+                            <select>
+                                <option value="" selected="">...</option>
+                                <option>Excellent-(720+)</option>
+                                <option>Good-(660-719)</option>
+                                <option>Fair-(600-659)</option>
+                                <option>Poor-(599 and below)</option>
+                            </select>
+                        </dd>
+                    <dt>Best Contact Time</dt>
+                        <dd>
+                            <select>
+                                <option value="" selected="">...</option>
+                                <option>Anytime</option>
+                                <option>Morning</option>
+                                <option>Afternoon</option>
+                                <option>Evening</option>
+                            </select>
+                        </dd>
+                </dl>
+
+                <button data-dir="next" class="nextBtn">next<img src="images/next.png" /></button>
+                <div class="progress-wrapper"><div class="progress"></div><p>55%</p></div>
+                <button data-dir="prev" class="prevQuest"> </button>
+
+                <form class="complForm" action='' method='POST' >
+                    <h2>Verify your data</h2>
+
+                    <div class="resBlock">
+                        <span>What type of loan do you need?</span>
+                        <select id="f1">
+                            <option>Refinance</option>
+                            <option>Home Equity</option>
+                            <option>Purchase Home</option>
+                        </select>
+                    </div>
+
+                    <div class="resBlock">
+                        <span>Property Type</span>
+                        <select id="f2">
+                            <option>Single Family</option>
+                            <option>Multiple Family</option>
+                            <option>Town House</option>
+                            <option>Condominium</option>
+                        </select>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>Property Zip<input id="f3" type="text" placeholder="property zip"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <span>Property State</span>
+                        <select id="f4">
+                            <option>...</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+
+                    <div class="resBlock">
+                        <span>Property Use</span>
+                        <select id="f5">
+                            <option>Primary Residence</option>
+                            <option>Second Home</option>
+                            <option>Investment Property</option>
+                        </select>
+                    </div>
+
+                    <div class="resBlock">
+                        <span>Estimated Property Value</span>
+                        <select id="f6">
+                            <option>...</option>
+                            <option value="2500" id="AdditionalCash-1">$0 - $5,000</option>
+                            <option value="7500" id="AdditionalCash-2">$5,000 - $10,000</option>
+                            <option value="12500" id="AdditionalCash-3">$10,000 - $15,000</option>
+                            <option value="17500" id="AdditionalCash-4">$15,000 - $20,000</option>
+                            <option value="22500" id="AdditionalCash-5">$20,000 - $25,000</option>
+                            <option value="27500" id="AdditionalCash-6">$25,000 - $30,000</option>
+                            <option value="32500" id="AdditionalCash-7">$30,000 - $35,000</option>
+                            <option value="37500" id="AdditionalCash-8">$35,000 - $40,000</option>
+                            <option value="42500" id="AdditionalCash-9">$40,000 - $45,000</option>
+                            <option value="47500" id="AdditionalCash-10">$45,000 - $50,000</option>
+                            <option value="52500" id="AdditionalCash-11">$50,000 - $55,000</option>
+                            <option value="57500" id="AdditionalCash-12">$55,000 - $60,000</option>
+                            <option value="62500" id="AdditionalCash-13">$60,000 - $65,000</option>
+                            <option value="67500" id="AdditionalCash-14">$65,000 - $70,000</option>
+                            <option value="72500" id="AdditionalCash-15">$70,000 - $75,000</option>
+                            <option value="77500" id="AdditionalCash-16">$75,000 - $80,000</option>
+                            <option value="82500" id="AdditionalCash-17">$80,000 - $85,000</option>
+                            <option value="87500" id="AdditionalCash-18">$85,000 - $90,000</option>
+                            <option value="92500" id="AdditionalCash-19">$90,000 - $95,000</option>
+                            <option value="97500" id="AdditionalCash-20">$95,000 - $100,000</option>
+                            <option value="100000" id="AdditionalCash-21">$100,000 - $100,000</option>
+                            <option value="105000" id="AdditionalCash-22">$100,000 - $110,000</option>
+                            <option value="115000" id="AdditionalCash-23">$110,000 - $120,000</option>
+                            <option value="125000" id="AdditionalCash-24">$120,000 - $130,000</option>
+                            <option value="135000" id="AdditionalCash-25">$130,000 - $140,000</option>
+                            <option value="145000" id="AdditionalCash-26">$140,000 - $150,000</option>
+                            <option value="155000" id="AdditionalCash-27">$150,000 - $160,000</option>
+                            <option value="165000" id="AdditionalCash-28">$160,000 - $170,000</option>
+                            <option value="175000" id="AdditionalCash-29">$170,000 - $180,000</option>
+                            <option value="185000" id="AdditionalCash-30">$180,000 - $190,000</option>
+                            <option value="195000" id="AdditionalCash-31">$190,000 - $200,000</option>
+                            <option value="210000" id="AdditionalCash-32">$200,000 - $220,000</option>
+                            <option value="230000" id="AdditionalCash-33">$220,000 - $240,000</option>
+                            <option value="250000" id="AdditionalCash-34">$240,000 - $260,000</option>
+                            <option value="270000" id="AdditionalCash-35">$260,000 - $280,000</option>
+                            <option value="290000" id="AdditionalCash-36">$280,000 - $300,000</option>
+                            <option value="310000" id="AdditionalCash-37">$300,000 - $320,000</option>
+                            <option value="330000" id="AdditionalCash-38">$320,000 - $340,000</option>
+                            <option value="350000" id="AdditionalCash-39">$340,000 - $360,000</option>
+                            <option value="370000" id="AdditionalCash-40">$360,000 - $380,000</option>
+                            <option value="390000" id="AdditionalCash-41">$380,000 - $400,000</option>
+                            <option value="410000" id="AdditionalCash-42">$400,000 - $420,000</option>
+                            <option value="430000" id="AdditionalCash-43">$420,000 - $440,000</option>
+                            <option value="450000" id="AdditionalCash-44">$440,000 - $460,000</option>
+                            <option value="470000" id="AdditionalCash-45">$460,000 - $480,000</option>
+                            <option value="490000" id="AdditionalCash-46">$480,000 - $500,000</option>
+                            <option value="510000" id="AdditionalCash-47">$500,000 - $520,000</option>
+                            <option value="530000" id="AdditionalCash-48">$520,000 - $540,000</option>
+                            <option value="550000" id="AdditionalCash-49">$540,000 - $560,000</option>
+                            <option value="570000" id="AdditionalCash-50">$560,000 - $580,000</option>
+                            <option value="590000" id="AdditionalCash-51">$580,000 - $600,000</option>
+                            <option value="610000" id="AdditionalCash-52">$600,000 - $620,000</option>
+                            <option value="630000" id="AdditionalCash-53">$620,000 - $640,000</option>
+                            <option value="650000" id="AdditionalCash-54">$640,000 - $660,000</option>
+                            <option value="670000" id="AdditionalCash-55">$660,000 - $680,000</option>
+                            <option value="690000" id="AdditionalCash-56">$680,000 - $700,000</option>
+                            <option value="710000" id="AdditionalCash-57">$700,000 - $720,000</option>
+                            <option value="730000" id="AdditionalCash-58">$720,000 - $740,000</option>
+                            <option value="750000" id="AdditionalCash-59">$740,000 - $760,000</option>
+                            <option value="770000" id="AdditionalCash-60">$760,000 - $780,000</option>
+                            <option value="790000" id="AdditionalCash-61">$780,000 - $800,000</option>
+                            <option value="810000" id="AdditionalCash-62">$800,000 - $820,000</option>
+                            <option value="830000" id="AdditionalCash-63">$820,000 - $840,000</option>
+                            <option value="850000" id="AdditionalCash-64">$840,000 - $860,000</option>
+                            <option value="870000" id="AdditionalCash-65">$860,000 - $880,000</option>
+                            <option value="890000" id="AdditionalCash-66">$880,000 - $900,000</option>
+                            <option value="910000" id="AdditionalCash-67">$900,000 - $920,000</option>
+                            <option value="930000" id="AdditionalCash-68">$920,000 - $940,000</option>
+                            <option value="950000" id="AdditionalCash-69">$940,000 - $960,000</option>
+                            <option value="970000" id="AdditionalCash-70">$960,000 - $980,000</option>
+                            <option value="990000" id="AdditionalCash-71">$980,000 +</option>
+                            <option value="1000000" id="AdditionalCash-72">$1,000,000 +</option>
+                            <option value="1750000" id="AdditionalCash-74">$1,500,000 +</option>
+                            <option value="2000000" id="AdditionalCash-75">$2,000,000 +</option>
+                        </select>
+                    </div>
+
+                    <div class="resBlock">
+                        <span>Total Mortgage Balance</span>
+                        <select id="f7">
+                            <option>...</option>
+                            <option value="2500" id="AdditionalCash-1">$0 - $5,000</option>
+                            <option value="7500" id="AdditionalCash-2">$5,000 - $10,000</option>
+                            <option value="12500" id="AdditionalCash-3">$10,000 - $15,000</option>
+                            <option value="17500" id="AdditionalCash-4">$15,000 - $20,000</option>
+                            <option value="22500" id="AdditionalCash-5">$20,000 - $25,000</option>
+                            <option value="27500" id="AdditionalCash-6">$25,000 - $30,000</option>
+                            <option value="32500" id="AdditionalCash-7">$30,000 - $35,000</option>
+                            <option value="37500" id="AdditionalCash-8">$35,000 - $40,000</option>
+                            <option value="42500" id="AdditionalCash-9">$40,000 - $45,000</option>
+                            <option value="47500" id="AdditionalCash-10">$45,000 - $50,000</option>
+                            <option value="52500" id="AdditionalCash-11">$50,000 - $55,000</option>
+                            <option value="57500" id="AdditionalCash-12">$55,000 - $60,000</option>
+                            <option value="62500" id="AdditionalCash-13">$60,000 - $65,000</option>
+                            <option value="67500" id="AdditionalCash-14">$65,000 - $70,000</option>
+                            <option value="72500" id="AdditionalCash-15">$70,000 - $75,000</option>
+                            <option value="77500" id="AdditionalCash-16">$75,000 - $80,000</option>
+                            <option value="82500" id="AdditionalCash-17">$80,000 - $85,000</option>
+                            <option value="87500" id="AdditionalCash-18">$85,000 - $90,000</option>
+                            <option value="92500" id="AdditionalCash-19">$90,000 - $95,000</option>
+                            <option value="97500" id="AdditionalCash-20">$95,000 - $100,000</option>
+                            <option value="100000" id="AdditionalCash-21">$100,000 - $100,000</option>
+                            <option value="105000" id="AdditionalCash-22">$100,000 - $110,000</option>
+                            <option value="115000" id="AdditionalCash-23">$110,000 - $120,000</option>
+                            <option value="125000" id="AdditionalCash-24">$120,000 - $130,000</option>
+                            <option value="135000" id="AdditionalCash-25">$130,000 - $140,000</option>
+                            <option value="145000" id="AdditionalCash-26">$140,000 - $150,000</option>
+                            <option value="155000" id="AdditionalCash-27">$150,000 - $160,000</option>
+                            <option value="165000" id="AdditionalCash-28">$160,000 - $170,000</option>
+                            <option value="175000" id="AdditionalCash-29">$170,000 - $180,000</option>
+                            <option value="185000" id="AdditionalCash-30">$180,000 - $190,000</option>
+                            <option value="195000" id="AdditionalCash-31">$190,000 - $200,000</option>
+                            <option value="210000" id="AdditionalCash-32">$200,000 - $220,000</option>
+                            <option value="230000" id="AdditionalCash-33">$220,000 - $240,000</option>
+                            <option value="250000" id="AdditionalCash-34">$240,000 - $260,000</option>
+                            <option value="270000" id="AdditionalCash-35">$260,000 - $280,000</option>
+                            <option value="290000" id="AdditionalCash-36">$280,000 - $300,000</option>
+                            <option value="310000" id="AdditionalCash-37">$300,000 - $320,000</option>
+                            <option value="330000" id="AdditionalCash-38">$320,000 - $340,000</option>
+                            <option value="350000" id="AdditionalCash-39">$340,000 - $360,000</option>
+                            <option value="370000" id="AdditionalCash-40">$360,000 - $380,000</option>
+                            <option value="390000" id="AdditionalCash-41">$380,000 - $400,000</option>
+                            <option value="410000" id="AdditionalCash-42">$400,000 - $420,000</option>
+                            <option value="430000" id="AdditionalCash-43">$420,000 - $440,000</option>
+                            <option value="450000" id="AdditionalCash-44">$440,000 - $460,000</option>
+                            <option value="470000" id="AdditionalCash-45">$460,000 - $480,000</option>
+                            <option value="490000" id="AdditionalCash-46">$480,000 - $500,000</option>
+                            <option value="510000" id="AdditionalCash-47">$500,000 - $520,000</option>
+                            <option value="530000" id="AdditionalCash-48">$520,000 - $540,000</option>
+                            <option value="550000" id="AdditionalCash-49">$540,000 - $560,000</option>
+                            <option value="570000" id="AdditionalCash-50">$560,000 - $580,000</option>
+                            <option value="590000" id="AdditionalCash-51">$580,000 - $600,000</option>
+                            <option value="610000" id="AdditionalCash-52">$600,000 - $620,000</option>
+                            <option value="630000" id="AdditionalCash-53">$620,000 - $640,000</option>
+                            <option value="650000" id="AdditionalCash-54">$640,000 - $660,000</option>
+                            <option value="670000" id="AdditionalCash-55">$660,000 - $680,000</option>
+                            <option value="690000" id="AdditionalCash-56">$680,000 - $700,000</option>
+                            <option value="710000" id="AdditionalCash-57">$700,000 - $720,000</option>
+                            <option value="730000" id="AdditionalCash-58">$720,000 - $740,000</option>
+                            <option value="750000" id="AdditionalCash-59">$740,000 - $760,000</option>
+                            <option value="770000" id="AdditionalCash-60">$760,000 - $780,000</option>
+                            <option value="790000" id="AdditionalCash-61">$780,000 - $800,000</option>
+                            <option value="810000" id="AdditionalCash-62">$800,000 - $820,000</option>
+                            <option value="830000" id="AdditionalCash-63">$820,000 - $840,000</option>
+                            <option value="850000" id="AdditionalCash-64">$840,000 - $860,000</option>
+                            <option value="870000" id="AdditionalCash-65">$860,000 - $880,000</option>
+                            <option value="890000" id="AdditionalCash-66">$880,000 - $900,000</option>
+                            <option value="910000" id="AdditionalCash-67">$900,000 - $920,000</option>
+                            <option value="930000" id="AdditionalCash-68">$920,000 - $940,000</option>
+                            <option value="950000" id="AdditionalCash-69">$940,000 - $960,000</option>
+                            <option value="970000" id="AdditionalCash-70">$960,000 - $980,000</option>
+                            <option value="990000" id="AdditionalCash-71">$980,000 +</option>
+                            <option value="1000000" id="AdditionalCash-72">$1,000,000 +</option>
+                            <option value="1750000" id="AdditionalCash-74">$1,500,000 +</option>
+                            <option value="2000000" id="AdditionalCash-75">$2,000,000 +</option>
+                        </select>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>First Name<input id="f8" type="text" placeholder="first name"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>Last Name<input id="f9" type="text" placeholder="last name"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>Email<input id="f10" type="text" placeholder="email"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>Zip<input id="f11" type="text" placeholder="zip"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <span>State</span>
+                        <select id="f12">
+                            <option>...</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>City<input id="f13" type="text" placeholder="city"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>Address<input id="f14" type="text" placeholder="address"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>Home Phone<input id="f15" type="text" placeholder="home phone"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <label>Cell Phone<input id="f16" type="text" placeholder="cell phone"/></label>
+                    </div>
+
+                    <div class="resBlock">
+                        <span>Credit Rating</span>
+                        <select id="f17">
+                            <option>...</option>
+                            <option>Excellent-(720+)</option>
+                            <option>Good-(660-719)</option>
+                            <option>Fair-(600-659)</option>
+                            <option>Poor-(599 and below)</option>
+                        </select>
+                    </div>
+
+                    <div class="resBlock">
+                        <span>Best Contact Time</span>
+                        <select id="f18">
+                            <option>...</option>
+                            <option>Anytime</option>
+                            <option>Morning</option>
+                            <option>Afternoon</option>
+                            <option>Evening</option>
+                        </select>
+                    </div>
+
+                    <input type='submit' value="Complete form" class='finishBtn'/>
+                </form>
+            </div>
+	</div>
+    </div>
+</body>
+</html>
