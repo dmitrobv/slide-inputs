@@ -92,11 +92,12 @@ select {
     height: 15px;
     width: 520px;
     margin: 0 auto;
-    margin-top: -130px;
+    margin-top: -50px;
     border-radius: 10px;
 }
 
 .progress-wrapper {
+    margin-bottom: 65px;
     background: none;
     background-color: #b0b0b0;
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b0b0b0), to(#ffffff));
@@ -153,7 +154,7 @@ select {
     width: 197px;
     padding: 10px 0 10px 0px;
     margin: 0 36%;
-    margin-top: 105px;
+    margin-top: 25px;
     border-radius: 10px;
     text-align: center;
     color: black;
