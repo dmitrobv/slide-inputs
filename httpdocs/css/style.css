@@ -132,7 +132,7 @@ select {
     margin-bottom: 20px;
 }
 
-.form_inside dl dd select, .form_inside dl dd input {
+.form_inside dl dd select, .form_inside dl dd input[type='text'] {
     display: block;
     height: 34px;
     width: 250px;
@@ -143,7 +143,7 @@ select {
     margin: 0 auto;
 }
 
-.form_inside dl dd input {
+.form_inside dl dd input[type='text'] {
     height: 30px;
 }
 
@@ -196,7 +196,7 @@ select {
     float: left;
 }
 
-.complForm input, .complForm select {
+.complForm input[type='text'], .complForm select, .complForm input[type='submit'] {
     clear: left;
     height: 34px;
     display: block;
@@ -205,12 +205,16 @@ select {
     border-radius: 5px;
 }
 
-.complForm div input, .complForm div select {
+.complForm div input[type='text'], .complForm div select, .complForm div input[type='submit'] {
     background: #fff !important;
 }
 
-.complForm input {
+.complForm input[type='text'], .complForm input[type='submit'] {
     height: 30px;
+}
+
+.complForm input[type='submit'] {
+    margin: 0 auto;
 }
 
 .complForm select {
@@ -229,10 +233,29 @@ select {
     font-size: 30px;
 }
 
-.complForm > input {
+.complForm > input[type='text'] {
     margin: 0 auto;
 }
 
 .finishBtn {
     background: url(../images/button.jpg) repeat-x center;
+}
+
+.radio-block {
+    margin: 0 auto;
+    width: 120px;
+    height: 50px;
+}
+
+.radio-block label {
+    font-size: 20px;
+}
+
+dl dd {
+    min-height: 34px;
+}
+
+.radio-block {
+    height: 34px;
+    margin-bottom: 20px;
 }
