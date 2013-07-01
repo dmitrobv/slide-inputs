@@ -98,6 +98,5 @@ function emptyField() {
 
 function initDds() {
 
-});
-
 }
+
