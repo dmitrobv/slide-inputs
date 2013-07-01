@@ -1,18 +1,30 @@
 $(document).ready(function() {
     var currentDt = 1,
         firstQ = $('dl.questions dt').first(),
-        totalItems = $('dl.questions dt').length,
-        percentage = 100 / totalItems;
         percentageText = $('.progress-wrapper p');
         progress = $('.progress').css('background-size','0 100%'),
         nextBtn = $('.nextBtn'),
         prevBtn = $('.prevQuest'),
         questBlock = $('.questions'),
-        progressWrap = $('.progress-wrapper');
+        progressWrap = $('.progress-wrapper'),
 
         percentageText.text('0%');
 
-        $('button').on('click', function() { currentDt = ($(this).data('dir') === 'next') ? nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percentageText, totalItems) : prevQuestFn(currentDt, firstQ, percentage, progress, percentageText); } );
+        $('button').on('click', function() {
+
+            var typeOfLoan = $("#typeOfLoan").val();
+
+            switch( typeOfLoan ) {
+                case 'Refinance': refinance(); break;
+                case 'Home Equity': equity(); break;
+                case 'Purchase Home': purchasehome(); break;
+                    default: emptyField(); return;
+            };
+
+            var totalItems = $('dl.questions dt:visible').length,
+                percentage = 100 / totalItems;
+
+            currentDt = ($(this).data('dir') === 'next') ? nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percentageText, totalItems) : prevQuestFn(currentDt, firstQ, percentage, progress, percentageText); } );
 });
 
 
@@ -23,10 +35,10 @@ function nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percen
 
     //Final question is answered
     if(currentDt === totalItems) {
-        progressWrap.hide();
-        questBlock.hide();
-        prevBtn.hide();
-        nextBtn.hide();
+        progressWrap.css('display','none');
+        questBlock.css('display','none');
+        prevBtn.css('display','none');
+        nextBtn.css('display','none');
         $('.form').css({ 'height': '660px', 'background-size':'100% 100%'});
         $('.form_inside').css('padding','25px');
         var field_id = 1;
@@ -51,4 +63,41 @@ function prevQuestFn(currentDt, firstQ, percentage, progress, percentageText, to
 function progressRefresh(percentage, currentDt, progress, dir, percentageText) {
     progress.css('background-size', (dir === 'prev') ? (currentDt-=2)*percentage+'% 100%' : currentDt*percentage+'% 100%');
     percentageText.text(Math.round( currentDt*percentage) + '%');
+}
+
+function refinance() {
+    showDtDd();
+    $("dt:not(.refinance)").css('display','none');
+    $("dd:not(.refinance)").css('display','none');
+    initDds();
+}
+
+function equity() {
+    showDtDd();
+    $("dt:not(.equity)").css('display','none');
+    $("dd:not(.equity)").css('display','none');
+    initDds();
+}
+
+function purchasehome() {
+    showDtDd();
+    $("dt:not(.purchase-home)").css('display','none');
+    $("dd:not(.purchase-home)").css('display','none');
+    initDds();
+}
+
+function showDtDd() {
+    $("dt").css('display','block');
+    $("dd").css('display','block');
+}
+
+function emptyField() {
+    $("dd select").effect( "bounce", { times: 5 }, "slow" );
+    $("dd input").effect( "bounce", { times: 5 }, "slow" );
+}
+
+function initDds() {
+
+});
+
 }
