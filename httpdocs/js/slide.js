@@ -20,9 +20,9 @@ $(document).ready(function() {
             var typeOfLoan = $("#typeOfLoan").val();
 
             switch( typeOfLoan ) {
-                case 'Refinance': refinance(); break;
-                case 'Home Equity': equity(); break;
-                case 'Purchase Home': purchasehome(); break;
+                case 'mortgagerefinance': refinance(); break;
+                case 'homeequity': equity(); break;
+                case 'purchasehome': purchasehome(); break;
                     default: emptyField(); return;
             };
 
