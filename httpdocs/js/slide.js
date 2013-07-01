@@ -29,6 +29,11 @@ $(document).ready(function() {
 
 
 function nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percentageText) {
+    if (($(".fid"+currentDt).children('select').val()=='') || ($(".fid"+currentDt).children('input').val()=='')) {
+        emptyField();
+        return currentDt;
+    }
+
     $('.prevQuest').css('visibility','visible');
     firstQ.animate({'margin-top': (currentDt === totalItems) ? '-='+0 : '-=117px' }, 500);
     progressRefresh(percentage, currentDt, progress, 'next', percentageText);
@@ -97,6 +102,10 @@ function emptyField() {
 }
 
 function initDds() {
+    var class_id = 0;
 
+    $('dd:visible').addClass(function(class_id){
+        return 'fid'+ (++class_id);
+    })
 }
 
