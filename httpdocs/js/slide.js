@@ -10,6 +10,11 @@ $(document).ready(function() {
 
         percentageText.text('0%');
 
+
+        $(".zipcode").inputmask( "99999", { 'clearIncomplete': true, 'autoUnmask' : true });
+        $(".phonenum").inputmask( "999-999-9999", {'autoUnmask':true, 'clearIncomplete': true});
+
+
         $('button').on('click', function() {
 
             var typeOfLoan = $("#typeOfLoan").val();

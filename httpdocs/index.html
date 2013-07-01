@@ -6,6 +6,7 @@
         <link type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' />
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" ></script>
+        <script type="text/javascript" src="./js/jquery.inputmask.js"></script>
         <script type="text/javascript" src="./js/slide.js"></script>
     </head>
 
@@ -36,7 +37,7 @@
                         </dd>
                     <dt class="refinance equity purchase-home">Property Zip</dt>
                         <dd class="refinance equity purchase-home">
-                            <input type="text" placeholder="property zip"/>
+                            <input class="zipcode" type="text"/>
                         </dd>
                     <dt class="refinance equity purchase-home">Property State</dt>
                         <dd class="refinance equity purchase-home">
@@ -696,7 +697,7 @@
                         </dd>
                     <dt class="refinance equity purchase-home">Zip</dt>
                         <dd class="refinance equity purchase-home">
-                            <input type="text" placeholder="zip"/>
+                            <input type="text" class="zipcode"/>
                         </dd>
                     <dt class="refinance equity purchase-home">State</dt>
                         <dd class="refinance equity purchase-home">
@@ -765,11 +766,11 @@
                         </dd>
                     <dt class="refinance equity purchase-home">Home Phone</dt>
                         <dd class="refinance equity purchase-home">
-                            <input type="text" placeholder="home phone"/>
+                            <input type="text" class="phonenum"/>
                         </dd>
                     <dt class="refinance equity purchase-home">Cell Phone</dt>
                         <dd class="refinance equity purchase-home">
-                            <input type="text" placeholder="cell phone"/>
+                            <input type="text" class="phonenum"/>
                         </dd>
                     <dt class="refinance equity purchase-home">Credit Rating</dt>
                         <dd class="refinance equity purchase-home">
@@ -819,7 +820,7 @@
                     </div>
 
                     <div class="resBlock">
-                        <label>Property Zip<input id="f3" type="text" placeholder="property zip"/></label>
+                        <label>Property Zip<input id="f3" type="text" class="zipcode"/></label>
                     </div>
 
                     <div class="resBlock">
