@@ -7,7 +7,7 @@ $(document).ready(function() {
         prevBtn = $('.prevQuest'),                                              //previous button - visible only since second step
         questBlock = $('.questions'),                                           //block within the current question is displayed
         progressWrap = $('.progress-wrapper'),                                  //block, containing progress bar and percents section
-
+        step = 3;
         percentageText.text('0%');
 
 
@@ -30,25 +30,41 @@ $(document).ready(function() {
             /*****************************************************************/
 
             var totalItems = $('dl.questions dt:visible').length,               //getting amount of visible dt's
-                percentage = 100 / totalItems;
+                percentage = (100 / totalItems);
 
             currentDt = ($(this).data('dir') === 'next') ? nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percentageText, totalItems) : prevQuestFn(currentDt, firstQ, percentage, progress, percentageText); } );
 });
 
+$(document).ready(function(){
+    $("#property_zip").on('focusout', function(){ zipInfo({'zip': '#property_zip', 'state':'#property_state'}) })
+    $("#zip").on('focusout', function(){ zipInfo({'zip': '#zip', 'state':'#state', 'city':'#city'}) })
+})
 
 /* Next button pressed */
 function nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percentageText) {
+
+
     if (($(".fid"+currentDt).children('select').val()=='') || ($(".fid"+currentDt).children('input').val()=='')) {
         emptyField();
         return currentDt;
     }
 
+    if (($(".fid"+(currentDt+1)).children('select').val()=='') || ($(".fid"+(currentDt+1)).children('input').val()=='')) {
+        emptyField();
+        return currentDt;
+    }
+
+    if (($(".fid"+(currentDt+2)).children('select').val()=='') || ($(".fid"+(currentDt+2)).children('input').val()=='')) {
+        emptyField();
+        return currentDt;
+    }
+
     $('.prevQuest').css('visibility','visible');
-    firstQ.animate({'margin-top': (currentDt === totalItems) ? '-='+0 : '-=117px' }, 500);
-    progressRefresh(percentage, currentDt, progress, 'next', percentageText);
+    firstQ.animate({'margin-top': (currentDt === totalItems) ? '-='+0 : '-=351px' }, 500);
+    progressRefresh(percentage, currentDt+(step-1), progress, 'next', percentageText);
 
     //Final question is answered
-    if(currentDt === totalItems) {
+    if((totalItems - currentDt)<=(step-1)) {
         progressWrap.css('display','none');
         questBlock.css('display','none');
         prevBtn.css('display','none');
@@ -64,16 +80,18 @@ function nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percen
         )
         $('.complForm').show('slow');
     }
-    return (currentDt<totalItems) ? ++currentDt : currentDt;
+    return ((totalItems-currentDt)>=step) ? (currentDt+step) : totalItems;
 }
 /***********************/
 
 /* Previous button pressed */
 function prevQuestFn(currentDt, firstQ, percentage, progress, percentageText, totalItems) {
-    if(currentDt === 2) $('.prevQuest').css('visibility','hidden');
-    firstQ.animate({'margin-top': (currentDt === 1) ? 0 : '+=117px' }, 500);
-    progressRefresh(percentage, currentDt, progress, 'prev', percentageText);
-    return (currentDt === 1) ? 1 : --currentDt;
+    if(currentDt <= (step+1)) $('.prevQuest').css('visibility','hidden');
+    if (currentDt === totalItems) currentDt = ( totalItems - currentDt);
+    if(currentDt === 0) currentDt = totalItems;
+    firstQ.animate({'margin-top': (currentDt === 1) ? 0 : '+=351px' }, 500);
+    progressRefresh(percentage, (currentDt-(step-1)), progress, 'prev', percentageText);
+    return (currentDt < step) ? 1 : (currentDt-step);
 }
 /***************************/
 
@@ -121,7 +139,7 @@ function showDtDd() {
 /* Bounce effect if the field or selection is empty */
 function emptyField() {
     $("dd select").effect( "bounce", { times: 5 }, "slow" );
-    $("dd input").effect( "bounce", { times: 5 }, "slow" );
+    $("dd input[type='text']").effect( "bounce", { times: 5 }, "slow" );
 }
 /*****************************************************/
 
@@ -135,3 +153,79 @@ function initDds() {
 }
 /*****************************************************************************************/
 
+/* getting state and city according to US zip */
+function zipInfo(params)
+{
+        var zipElement = jQuery(params.zip);
+        if(params.city!=null)
+             var cityElement = jQuery(params.city);
+        else
+        {
+            var cityElement =null;
+        }
+        var stateElement = jQuery(params.state);
+        if(typeof params.container!='undefined' && params.container!=null)
+        {
+            zipElement = jQuery(params.zip,params.container);
+            if(cityElement!=null)
+                cityElement = jQuery(params.city,params.container);
+            stateElement = jQuery(params.state,params.container);
+        }
+        if (typeof(jQuery) == 'undefined')
+        {
+
+        }
+        else
+        {
+            if (jQuery(zipElement).val().length>0)
+            {
+                if(jQuery(zipElement).val().replace('_','').length == 5)
+                {
+                    if(cityElement==null || (cityElement!=null && (jQuery(cityElement).val()=='Loading...' || jQuery(cityElement).val().length==0))){
+                        if(cityElement!=null)
+                            jQuery(cityElement).val('Loading...');
+
+                        var ___url = 'https://altohost.com/system/geo/zipinfo.php?zip='+encodeURIComponent(jQuery(zipElement).val())+'&c=?';
+                        jQuery.ajax(
+                        {
+                            url: ___url,
+                            cache: false,
+                            dataType:'jsonp',
+                            success: function(obj){
+                                var  cityTP = '';
+                                var  stateTP = '';
+
+                                try {
+
+                                    if(obj.city && obj.state){
+                                        cityTP = obj.city;
+                                        stateTP = obj.state;
+
+                                    }
+                                }
+                                catch(err) {
+                                    cityTP = '';
+                                    stateTP = '';
+                                }
+                                if(cityTP.length>0){
+                                    if(cityElement!=null)
+                                        jQuery(cityElement).val(cityTP);
+                                }else{
+                                    if(cityElement!=null)
+                                        jQuery(cityElement).val('');
+                                }
+                                if(stateTP.length>0)
+                                    jQuery(stateElement).val(stateTP);
+                                if(cityElement!=null)
+                                    jQuery(cityElement).change();
+                                jQuery(stateElement).change();
+                            }
+                            }
+                        );
+                    }
+                }
+            }
+
+        }
+    }
+/**********************************************/
