@@ -8,6 +8,7 @@ $(document).ready(function() {
         questBlock = $('.questions'),                                           //block within the current question is displayed
         progressWrap = $('.progress-wrapper'),                                  //block, containing progress bar and percents section
         step = 3;
+
         percentageText.text('0%');
 
 
@@ -17,20 +18,20 @@ $(document).ready(function() {
         /**************************************************************************/
 
         $('button').on('click', function() {
+            if(currentDt<=1){
+                var typeOfLoan = $("#typeOfLoan").val();
 
-            var typeOfLoan = $("#typeOfLoan").val();
-
-            /* Select appropriate filter according to selected type of loan */
-            switch( typeOfLoan ) {
-                case 'mortgagerefinance': refinance(); break;
-                case 'homeequity': equity(); break;
-                case 'purchasehome': purchasehome(); break;
-                    default: emptyField(); return;
-            };
-            /*****************************************************************/
-
-            var totalItems = $('dl.questions dt:visible').length,               //getting amount of visible dt's
-                percentage = (100 / totalItems);
+                /* Select appropriate filter according to selected type of loan */
+                switch( typeOfLoan ) {
+                    case 'mortgagerefinance': refinance(); break;
+                    case 'homeequity': equity(); break;
+                    case 'purchasehome': purchasehome(); break;
+                        default: emptyField(); return;
+                };
+                /*****************************************************************/
+            }
+                var totalItems = $('dl.questions dt:visible').length,               //getting amount of visible dt's
+                    percentage = (100 / totalItems);
 
             currentDt = ($(this).data('dir') === 'next') ? nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percentageText, totalItems) : prevQuestFn(currentDt, firstQ, percentage, progress, percentageText); } );
 });
@@ -38,6 +39,8 @@ $(document).ready(function() {
 $(document).ready(function(){
     $("#property_zip").on('focusout', function(){ zipInfo({'zip': '#property_zip', 'state':'#property_state'}) })
     $("#zip").on('focusout', function(){ zipInfo({'zip': '#zip', 'state':'#state', 'city':'#city'}) })
+    $("#second_mortgage_yes").on('click', function(){ $('.second_mortgage_fields').css('display','block'); initDds(); })
+    $("#second_mortgage_no").on('click', function(){ $('.second_mortgage_fields').css('display','none').removeClass('fid11 fid12'); initDds(); })
 })
 
 /* Next button pressed */
@@ -131,8 +134,15 @@ function purchasehome() {
 
 /* Displaying all dt's and dd's*/
 function showDtDd() {
+    var second_mortgage_fields = $(".second_mortgage_fields");
+
     $("dt").css('display','block');
     $("dd").css('display','block');
+
+
+    if($("second_mortgage_no").prop('checked', true))
+        second_mortgage_fields.css('display', 'none');
+    else second_mortgage_fields.css('display', 'bock');
 }
 /*******************************/
 
@@ -145,9 +155,22 @@ function emptyField() {
 
 /* Adding class to all currently visible dd's to know which is current in the future use */
 function initDds() {
-    var class_id = 0;
+    var class_id = 0,
+        item_classes,
+        fid_pos,
+        visible_dts = $('dd:visible');
 
-    $('dd:visible').addClass(function(class_id){
+        visible_dts.each(function() {
+          item_classes  = $(this).attr('class');
+
+          $(this).removeClass(item_classes);
+          fid_pos = strpos(item_classes, 'fid');
+          if(fid_pos !== false) { item_classes = item_classes.substr(0, fid_pos)}
+          $(this).addClass(item_classes);
+        })
+
+
+    visible_dts.addClass(function(class_id){
         return 'fid'+ (++class_id);
     })
 }
@@ -229,3 +252,9 @@ function zipInfo(params)
         }
     }
 /**********************************************/
+
+
+function strpos (haystack, needle, offset) {
+  var i = (haystack+'').indexOf(needle, (offset || 0));
+  return i === -1 ? false : i;
+}
