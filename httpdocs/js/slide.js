@@ -160,6 +160,7 @@ function initDds() {
         fid_pos,
         visible_dts = $('dd:visible');
 
+        //removing fid classes to avoid repeated instances
         visible_dts.each(function() {
           item_classes  = $(this).attr('class');
 
