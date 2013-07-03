@@ -101,8 +101,6 @@ function prevQuestFn(currentDt, firstQ, percentage, progress, percentageText, to
 /* Refreshing progress bar filling and percents */
 function progressRefresh(percentage, currentDt, progress, dir, percentageText) {
     progress.animate({ 'width': (dir === 'prev') ? (currentDt-=2)*percentage*5.2 : currentDt*percentage*5.2 }, 500);
-
-    /*progress.css('background-size', (dir === 'prev') ? (currentDt-=2)*percentage+'% 100%' : currentDt*percentage+'% 100%');*/
     percentageText.text(Math.round( currentDt*percentage) + '%');
 }
 /*************************************************/
