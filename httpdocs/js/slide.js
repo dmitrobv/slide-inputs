@@ -2,7 +2,7 @@ $(document).ready(function() {
     var currentDt = 1,                                                          //currently displayed dd
         firstQ = $('dl.questions dt').first(),                                  //getting first dt to adjusst it margin-top in the future
         percentageText = $('.progress-wrapper p');                              //paragraph to display percents
-        progress = $('.progress').css('background-size','0 100%'),              //progress bar block
+        progress = $('.progress').css('background-size','100% 100%'),              //progress bar block
         nextBtn = $('.nextBtn'),                                                //next button
         prevBtn = $('.prevQuest'),                                              //previous button - visible only since second step
         questBlock = $('.questions'),                                           //block within the current question is displayed
@@ -100,7 +100,9 @@ function prevQuestFn(currentDt, firstQ, percentage, progress, percentageText, to
 
 /* Refreshing progress bar filling and percents */
 function progressRefresh(percentage, currentDt, progress, dir, percentageText) {
-    progress.css('background-size', (dir === 'prev') ? (currentDt-=2)*percentage+'% 100%' : currentDt*percentage+'% 100%');
+    progress.animate({ 'width': (dir === 'prev') ? (currentDt-=2)*percentage*5.2 : currentDt*percentage*5.2 }, 500);
+
+    /*progress.css('background-size', (dir === 'prev') ? (currentDt-=2)*percentage+'% 100%' : currentDt*percentage+'% 100%');*/
     percentageText.text(Math.round( currentDt*percentage) + '%');
 }
 /*************************************************/
