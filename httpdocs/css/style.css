@@ -266,3 +266,6 @@ dl dd {
     margin-bottom: 20px;
 }
 
+dd select > div, dd input[type='text'] > div {
+    margin: 0 auto !important;
+}
