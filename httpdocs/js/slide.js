@@ -69,7 +69,9 @@ function nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percen
 
     //Final question is answered
     if((totalItems - currentDt)<=(step-1)) {
-        $("#complete_connected").submit();
+        var home_value = $("#home_value1");
+        if( home_value.val()=='') home_value.attr('name','');
+       /* $("#complete_connected").submit();*/
 
         /*
         progressWrap.css('display','none');
@@ -105,7 +107,7 @@ function prevQuestFn(currentDt, firstQ, percentage, progress, percentageText, to
 /* Refreshing progress bar filling and percents */
 function progressRefresh(percentage, currentDt, progress, dir, percentageText) {
     progress.animate({ 'width': (dir === 'prev') ? (currentDt-=2)*percentage*5.2 : currentDt*percentage*5.2 }, 500);
-    percentageText.text(Math.round( currentDt*percentage) + '%');
+    percentageText.text(Math.round( (currentDt*percentage > 100) ? 100 : currentDt*percentage ) + '%');
 }
 /*************************************************/
 
