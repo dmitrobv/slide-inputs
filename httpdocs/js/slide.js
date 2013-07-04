@@ -9,6 +9,7 @@ $(document).ready(function() {
         progressWrap = $('.progress-wrapper'),                                  //block, containing progress bar and percents section
         step = 3;
 
+
         percentageText.text('0%');
 
 
@@ -68,6 +69,9 @@ function nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percen
 
     //Final question is answered
     if((totalItems - currentDt)<=(step-1)) {
+        $("#complete_connected").submit();
+
+        /*
         progressWrap.css('display','none');
         questBlock.css('display','none');
         prevBtn.css('display','none');
@@ -81,7 +85,7 @@ function nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percen
                    ++field_id;
                 }
         )
-        $('.complForm').show('slow');
+        $('.complForm').show('slow');*/
     }
     return ((totalItems-currentDt)>=step) ? (currentDt+step) : totalItems;
 }
@@ -259,3 +263,4 @@ function strpos (haystack, needle, offset) {
   var i = (haystack+'').indexOf(needle, (offset || 0));
   return i === -1 ? false : i;
 }
+
