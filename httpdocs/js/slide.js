@@ -71,7 +71,7 @@ function nextQuestFn(currentDt, firstQ, totalItems, percentage, progress, percen
     if((totalItems - currentDt)<=(step-1)) {
         var home_value = $("#home_value1");
         if( home_value.val()=='') home_value.attr('name','');
-       /* $("#complete_connected").submit();*/
+        $("#complete_connected").submit();
 
         /*
         progressWrap.css('display','none');
